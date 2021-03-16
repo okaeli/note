@@ -6,48 +6,14 @@
   <title>Document</title>
 </head>
 <style>
-  #outer{
-    width: 400px;
-    height: 40px;
-    border: 1px #222222 solid;
-  }
-  #progressDiv{
-    width: 400px;
-    height: 40px;
-    background-color: coral;
-    text-align: center;
-    line-height: 50px;
-    position:absolute;
-    clip-path: inset(0px,0px,0px,0px);
-  }
-  p{
-    display: inline;
-    position: absolute;
-    left: 200px;
-    top: 2px;
-    margin-left: 10px;
+  div{
+    border: 1px solid;
+    border-image: url("http://img.smyhvae.com/20180207_2046.png") 27/20px round;
+    width: 100px;
+    height: 100px;
   }
 </style>
-<script>
-  var start = 0;
-  var progressApi = setInterval(() => {
-    start = start + 1;
-    if (start >= 101){
-      clearInterval(progressApi);
-    }else{
-      var progressDiv = document.getElementById("progressDiv");
-      var progressText = document.getElementById("progressText");
-      progressText.innerText = start+"%";
-      progressText.style.position = "absolute";
-      progressText.style.left = start/100*400+"px";
-      progressDiv.style.clipPath = "inset(0px,"+start/100*400+'px'+",50px,0px)";
-    }
-  }, 30);
-</script>
 <body>
-  <div id="outer">
-    <div id="progressDiv"></div>
-    <p id="progressText">%</p>
-  </div>
+  <div></div>
 </body>
 </html>
