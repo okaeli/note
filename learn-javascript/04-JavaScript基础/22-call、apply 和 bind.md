@@ -83,7 +83,7 @@ function Son(myName, myAge) {
     Father.call(this, myName, myAge);
 }
 
-const son1 = new Son('千古壹号', 28);
+const son1 = new Son('CY', 28);
 console.log(JSON.stringify(son1));
 ```
 
@@ -92,7 +92,7 @@ console.log(JSON.stringify(son1));
 打印结果：
 
 ```
-{"myName":"千古壹号","myAge":28}
+{"myName":"CY","myAge":28}
 ```
 
 ## apply() 方法
@@ -177,7 +177,6 @@ bind() 方法**不会调用函数**，但是可以改变函数内部的 this 指
 
 把call()、apply()、bind()这三个方法做一下对比，你会发现：实际开发中， bind() 方法使用得最为频繁。如果有些函数，我们不需要立即调用，但是又想改变这个函数内部的this指向，此时用 bind() 是最为合适的。
 
-
 语法：
 
 ```js
@@ -192,23 +191,27 @@ bind() 方法**不会调用函数**，但是可以改变函数内部的 this 指
 
 解释：它不会调用 fn1 函数，但会返回 由指定this 和指定实参的**原函数拷贝**。可以看出， bind() 方法是有返回值的。
 
+### call()方法举例
 
+```js
+var obj1 = {
+  name: 'cy',
+  age: 26
+}
 
+function demo1(a){
+  console.log(this.name)
+  console.log(this.age + a)
+}
 
+var demo2 = demo1.bind(obj1, 4)
 
+demo2()
+```
 
+打印结果：
 
-
-
-
-
-
-### call() 方法举例
-
-## 我的公众号
-
-想学习**代码之外的技能**？不妨关注我的微信公众号：**千古壹号**（id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/20200101.png)
+```
+  cy
+  30
+```
