@@ -41,7 +41,6 @@ BOM可以让我们通过JS来操作浏览器。BOM中为我们提供了一些对
 
 **一般我们只会使用`navigator.userAgent`来获取浏览器的信息**。
 
-
 userAgent 的值是一个字符串，简称 **UA**，这个字符串中包含了用来描述浏览器信息的内容，不同的浏览器会有不同的userAgent。
 
 **代码举例**：（获取当前浏览器的UA）
@@ -79,10 +78,6 @@ userAgent 的值是一个字符串，简称 **UA**，这个字符串中包含了
 不同浏览器（包括微信内置的浏览器）的 userAgent 信息，是不一样的，我们可以根据 `navigator.userAgent`属性来获取。
 
 比如说，我们在电脑浏览器上，按F12，然后在控制台输入`navigator.userAgent`，如下：
-
-![](http://img.smyhvae.com/20180425_1656.png)
-
-上图显示，MacOS上的Chrome浏览器的 userAgent 是：
 
 ```
 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.117 Safari/537.36"
@@ -187,8 +182,6 @@ history.go( -2 ); // 向后跳转两个页面
 
 备注：浏览器的前进按钮、后退按钮，在这个位置：
 
-![](http://img.smyhvae.com/20180201_2146.png)
-
 
 ## Location 对象
 
@@ -258,14 +251,3 @@ console.log(location.href); // 获取当前页面的url 路径
 ```
 
 解释：使用一个新的页面替换当前页面，调用完毕也会跳转页面。但不会生成历史记录，不能使用「后退按钮」后退。
-
-
-## 我的公众号
-
-想学习<font color=#0000ff>**代码之外的技能**</font>？不妨关注我的微信公众号：**千古壹号**（id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/20190101.png)
-
-

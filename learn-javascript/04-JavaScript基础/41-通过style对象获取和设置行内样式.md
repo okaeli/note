@@ -40,11 +40,15 @@
 </html>
 ```
 
-打印结果：
+打印结果
+```
+pink
 
-![](http://img.smyhvae.com/20180129_1407.png)
+object
+...
+```
 
-上图显示，因为border属性不是行内样式，所以无法通过style对象获取。
+因为border属性不是行内样式，所以无法通过style对象获取。
 
 ### 通过 js 读取元素的样式
 
@@ -100,7 +104,6 @@ style属性需要注意以下几点：
 
 （6）box.style.cssText = “字符串形式的样式”。
 
-
 `cssText`这个属性，其实就是把行内样式里面的值当做字符串来对待。在上方代码的基础之上，举例：
 
 ```html
@@ -117,7 +120,9 @@ style属性需要注意以下几点：
 
 打印结果：
 
-![](http://img.smyhvae.com/20180129_1410.png)
+```
+width: 300px;height: 300px;background-color: green;
+```
 
 ### style的常用属性
 
@@ -383,46 +388,7 @@ style的常用属性包括：
 </html>
 ```
 
-实现的效果如下：
-
-![](http://img.smyhvae.com/20180129_1520.gif)
-
-代码解释：
-
 上方代码中，我们**用到了计数器myColor来记录每一行最原始的颜色**（赋值白色之前）。如果不用计数器，可能很多人以为代码是写的：（错误的代码）
-
-```html
-<script>
-    //需求：让tr各行变色，鼠标放入tr中，高亮显示。
-
-    //1.隔行变色。
-    var tbody = document.getElementById("target");
-    var trArr = tbody.children;
-    //循环判断并各行赋值属性（背景色）
-    for (var i = 0; i < trArr.length; i++) {
-        if (i % 2 !== 0) {
-            trArr[i].style.backgroundColor = "#a3a3a3";
-        } else {
-            trArr[i].style.backgroundColor = "#ccc";
-        }
-
-        //鼠标进入高亮显示
-        //难点：鼠标移开的时候要回复原始颜色。
-        //计数器（进入tr之后，立刻记录颜色，然后移开的时候使用记录好的颜色）
-        trArr[i].onmouseover = function () {
-            this.style.backgroundColor = "#fff";
-        }
-        trArr[i].onmouseout = function () {
-            this.style.backgroundColor = "#a3a3a3";
-        }
-    }
-</script>
-
-```
-
-这种错误的代码，实现的效果却是：（未达到效果）
-
-![](http://img.smyhvae.com/20180129_1525.gif)
 
 ## 通过 js 获取元素当前显示的样式
 
@@ -499,20 +465,3 @@ style的常用属性包括：
 </body>
 </html>
 ```
-
-打印结果：
-
-![](http://img.smyhvae.com/20180204_1425.png)
-
-
-
-
-## 我的公众号
-
-想学习**代码之外的技能**？不妨关注我的微信公众号：**千古壹号**（id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/20190101.png)
-
-

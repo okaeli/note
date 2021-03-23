@@ -38,11 +38,7 @@ HTML加载完毕，渲染引擎会在内存中把HTML文档，生成一个DOM树
 
 **DOM树**：（一切都是节点）
 
-DOM的数据结构如下：
-
-![](http://img.smyhvae.com/20180126_2105.png)
-
-上图可知，**在HTML当中，一切都是节点**（非常重要）。节点的分类，在上一段中，已经讲了。
+**在HTML当中，一切都是节点**（非常重要）。
 
 整个html文档就是一个文档节点。所有的节点都是Object。
 
@@ -86,13 +82,9 @@ document.getElementsByClassName("hehe")[0];  //取数组中的第一个元素
 
 DOM的节点并不是孤立的，因此可以通过DOM节点之间的相对关系对它们进行访问。如下：
 
-![](http://img.smyhvae.com/20180126_2140.png)
-
 节点的访问关系，是以**属性**的方式存在的。
 
 JS中的**父子兄**访问关系：
-
-![](http://img.smyhvae.com/20180126_2145.png)
 
 这里我们要重点知道**parentNode**和**children**这两个属性的用法。下面分别介绍。
 
@@ -246,7 +238,12 @@ JS中的**父子兄**访问关系：
 
 打印结果：
 
-![](http://img.smyhvae.com/20180127_1135.png)
+```console
+<li>​</li>​
+<adbc>​</adbc>​
+object
+object
+```
 
 ### 插入节点
 
@@ -271,37 +268,22 @@ JS中的**父子兄**访问关系：
 - 在参考节点前插入一个新的节点。
 - 如果参考节点为null，那么他将在父节点里面的最后插入一个子节点。
 
-![](http://img.smyhvae.com/20180127_1257.png)
-
-我们可以看到，li标签确实被插入到了box1标签的里面，和box2并列了。
-
-方式2的举例：
-
-![](http://img.smyhvae.com/20180127_1302.png)
-
-我们可以看到，b1标签被插入到了box1标签的里面，和a1标签并列，在a1标签的前面。
-
-
 **特别强调：**
 
 关于方式1的appendChild方法，这里要强调一下。比如，现在有下面这样一个div结构：
 
 ```html
 <div class="box11">
-    <div class="box12">生命壹号</div>
+    <div class="box12">box12</div>
 </div>
 
 <div class="box21">
-    <div class="box22">永不止步</div>
+    <div class="box22">box22</div>
 
 </div>
 ```
 
-
-上方结构中，子盒子box12是在父亲box11里的，子盒子box22是在父亲box21里面的。现在，如果我调用方法`box11.appendChild(box22)`，**最后产生的结果是：box22会跑到box11中**（也就是说，box22不在box21里面了）。这是一个很神奇的事情：
-
-
-![](http://img.smyhvae.com/20180129_2125.png)
+上方结构中，子盒子box12是在父亲box11里的，子盒子box22是在父亲box21里面的。现在，如果我调用方法`box11.appendChild(box22)`，**最后产生的结果是：box22会跑到box11中**（也就是说，box22不在box21里面了）。
 
 ### 删除节点
 
@@ -378,10 +360,6 @@ JS中的**父子兄**访问关系：
 </body>
 ```
 
-上方代码中的img标签，有各种属性，我们可以逐一获取，打印结果如下：
-
-![](http://img.smyhvae.com/20180127_1340.png)
-
 **方式2**：
 
 ```javascript
@@ -395,10 +373,6 @@ JS中的**父子兄**访问关系：
     console.log(myNode.getAttribute("class"));   //注意是class，不是className
     console.log(myNode.getAttribute("title"));
 ```
-
-打印结果：
-
-![](http://img.smyhvae.com/20180127_1345.png)
 
 方式1和方式2的区别在于：前者是直接操作标签，后者是把标签作为DOM节点。推荐方式2。
 
@@ -425,7 +399,6 @@ JS中的**父子兄**访问关系：
     myNode.setAttribute("id","你好");
 ```
 
-
 ### 3、删除节点的属性
 
 格式：
@@ -440,7 +413,6 @@ JS中的**父子兄**访问关系：
     myNode.removeAttribute("class");
     myNode.removeAttribute("id");
 ```
-
 
 ### 总结
 
@@ -488,7 +460,6 @@ div.setAttribute('bbb', 'qianguyihao');
 </body>
 ```
 
-
 ## DOM对象的属性-补充
 
 ### innerHTML和innerText的区别
@@ -498,17 +469,6 @@ div.setAttribute('bbb', 'qianguyihao');
 - **innerHTML**：双闭合标签里面的内容（包含标签）。
 
 - **innerText**：双闭合标签里面的内容（不包含标签）。（老版本的火狐用textContent）
-
-
-**获取内容举例：**
-
-如果我们想获取innerHTML和innerText里的内容，看看会如何：（innerHTML会获取到标签本身，而innerText则不会）
-
-![](http://img.smyhvae.com/20180127_1652.png)
-
-**修改内容举例：**（innerHTML会修改标签本身，而innerText则不会）
-
-![](http://img.smyhvae.com/20180127_1657.png)
 
 ### nodeType属性
 
@@ -525,8 +485,8 @@ div.setAttribute('bbb', 'qianguyihao');
 我们那下面这个标签来举例：
 
 ```html
-<div id="box" value="111">
-    生命壹号
+<div id="box1" value="111">
+    demo
 </div>
 ```
 

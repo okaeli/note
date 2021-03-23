@@ -111,10 +111,6 @@ js中有一套方便的**获取元素尺寸**的办法就是offset家族。offse
 </html>
 ```
 
-打印结果：
-
-![](http://img.smyhvae.com/20180202_1725.png)
-
 ### 3、offsetLeft 和 offsetTop
 
 `offsetLeft`：当前元素相对于其**定位父元素**的水平偏移量。
@@ -195,13 +191,11 @@ div.style.left = "100px";
 
 （3）offsetLeft 和 offsetTop **只读**，而 style.left 和 style.top 可读写（只读是获取值，可写是修改值）
 
-
 总结：我们一般的做法是：**用offsetLeft 和 offsetTop 获取值，用style.left 和 style.top 赋值**（比较方便）。理由如下：
 
 - style.left：只能获取行内式，获取的值可能为空，容易出现NaN。
 
 - offsetLeft：获取值特别方便，而且是现成的number，方便计算。它是只读的，不能赋值。
-
 
 ## 动画的种类
 
@@ -258,10 +252,6 @@ div.style.left = "100px";
 </body>
 </html>
 ```
-
-效果如下：
-
-![](http://img.smyhvae.com/20180202_1840.gif)
 
 ## 匀速动画的封装：每间隔30ms，移动盒子10px【重要】
 
@@ -356,10 +346,6 @@ div.style.left = "100px";
 </body>
 </html>
 ```
-
-实现的效果：
-
-![](http://img.smyhvae.com/20180202_1910.gif)
 
 上方代码中的方法封装，可以作为一个模板步骤，要记住。其实，这个封装的方法，写成下面这样，会更严谨，更容易理解：（将if语句进行了改进）
 
@@ -651,23 +637,4 @@ div.style.left = "100px";
 
 
 ```
-
-实现效果：
-
-![](http://img.smyhvae.com/20180202_2020.gif)
-
-温馨提示：动图太大，可以把<http://img.smyhvae.com/20180202_2020.gif>单独在浏览器中打开。
-
-工程文件：
-
-- [2018-02-02-JS动画实现轮播图.rar](http://download.csdn.net/download/smyhvae/10237662)
-
-
-## 我的公众号
-
-想学习<font color=#0000ff>**代码之外的技能**</font>？不妨关注我的微信公众号：**千古壹号**（id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/2016040102.jpg)
 

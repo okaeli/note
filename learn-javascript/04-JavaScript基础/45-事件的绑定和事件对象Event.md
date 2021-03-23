@@ -51,7 +51,6 @@
     }, false);
 ```
 
-
 参数解释：
 
 - 参数1：事件名的字符串(注意，没有on)
@@ -215,9 +214,7 @@
 
 所有浏览器都支持event对象，但支持的方式不同。如下。
 
-（1）普通浏览器的写法是 `event`。比如：
-
-![](http://img.smyhvae.com/20180203_1735.png)
+（1）普通浏览器的写法是 `event`。
 
 （2）ie 678 的写法是 `window.event`。此时，事件对象 event 是作为window对象的属性保存的。
 
@@ -262,9 +259,7 @@
 
 ### event 属性
 
-event 有很多属性，比如：
-
-![](http://img.smyhvae.com/20180203_1739.png)
+event 有很多属性
 
 由于pageX 和 pageY的兼容性不好，我们可以这样做：
 
@@ -403,10 +398,6 @@ event 有很多属性，比如：
 </body>
 </html>
 ```
-
-实现效果：
-
-![](http://img.smyhvae.com/20180203_1828.gif)
 
 ### 举例3：商品放大镜
 
@@ -600,16 +591,3 @@ function scroll() {  // 开始封装自己的scrollTop
 }
 
 ```
-
-效果演示：
-
-![](http://img.smyhvae.com/20180203_1920.gif)
-
-
-## 我的公众号
-
-想学习<font color=#0000ff>**代码之外的技能**</font>？不妨关注我的微信公众号：**千古壹号**（id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/2016040102.jpg)

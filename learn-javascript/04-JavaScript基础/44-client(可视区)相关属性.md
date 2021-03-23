@@ -109,7 +109,6 @@ function client() {
 
 ```
 
-
 **案例：根据浏览器的可视宽度，给定不同的背景的色。**
 
 > PS：这个可以用来做响应式。
@@ -174,24 +173,3 @@ function client() {
         document.title = window.screen.width + "    " + window.screen.height;
     }
 ```
-
-显示效果：
-
-
-![](http://img.smyhvae.com/20180203_2155.png)
-
-
-上图中，不管我如何改变浏览器的窗口大小，title栏显示的值永远都是我的显示器分辨率：1920*1080。
-
-
-
-
-## 我的公众号
-
-想学习**代码之外的技能**？不妨关注我的微信公众号：**千古壹号**（id：`qianguyihao`）。
-
-扫一扫，你将发现另一个全新的世界，而这将是一场美丽的意外：
-
-![](http://img.smyhvae.com/20190101.png)
-
-
